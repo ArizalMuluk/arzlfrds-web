@@ -229,7 +229,7 @@ span {
 }
 
 .text-animation span::before {
-    content: "";
+    content: "Python Developer";
     color: var(--main-color);
     animation: words 20s infinite;
 }
@@ -262,13 +262,14 @@ span {
     }
     51%,
     75% {
-        content: "Data Science";
+        content: "Data Analyst";
     }
     76%, 
     100% {
-        content: "Software Developer";
+        content: "Sofware Dev";
     }
 }
+
 @keyframes typing {
     10%,
     15%,
