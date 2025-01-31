@@ -406,3 +406,66 @@ span {
     background-color: var(--bg-color);
     width: 50px;;
 }
+
+.skills {
+    background: var(--bg-color);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 0 8%;
+}
+
+.skills-box {
+    background: var(--second-bg-color);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.skills-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.skills-box h3 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.skills-tags span {
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    display: flex; /* Added for image alignment */
+    align-items: center; /* Center image and text vertically */
+}
+
+.skills-tags span img {
+    width: 2rem; /* Size of the icon */
+    height: 2rem; /* Size of the icon */
+    margin-right: 0.5rem; /* Space between image and text */
+}
+
+.skills-tags span:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 10px var(--main-color);
+}
