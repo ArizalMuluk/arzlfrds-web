@@ -266,7 +266,7 @@ span {
     }
     76%, 
     100% {
-        content: "Sofware Dev";
+        content: "Sofware Developer";
     }
 }
 
@@ -482,9 +482,10 @@ span {
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2.5rem;
+    padding: 0 2rem;
 }
 
 .project-box {
@@ -494,6 +495,7 @@ span {
     border: 5px solid transparent;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    padding: 2rem;
 }
 
 .project-box:hover {
@@ -655,4 +657,180 @@ span {
     text-align: center;
     font-size: 16px;
     color: white;
+}
+
+@media (max-width:1285px) {
+    html {
+        font-size: 55%;
+    }
+
+.project-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin: 0 2rem;
+    }
+}
+
+@media (max-width:991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .timeline-items::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 100%;
+        background-color: var(--main-color);
+        left: 0;
+    }
+    
+    .timeline-item {
+        padding-left: 30px;
+        position: relative;
+    }
+    
+    .timeline-dot {
+        height: 21px;
+        width: 21px;
+        background-color: var(--main-color);
+        box-shadow: 0 0 25px var(--main-color),
+                    0 0 50px var(--main-color);
+        position: absolute;
+        left: 0;
+        border-radius: 50%;
+        top: 10px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 37px;
+    }
+
+    .timeline-dot {
+        left: 0;
+    }
+
+    .project {
+        padding-bottom: 7rem;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .project-box {
+        height: auto;
+        min-height: 250px;
+    }
+
+
+    .skills-container {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .contact form {
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width:895px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+
+    .home-content p {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .home img {
+        width: 56vw;
+    }
+
+    .project h2 {
+        margin-bottom: 3rem;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin: 0 3rem;
+    }
+
+    .project-box {
+        height: auto;
+        min-height: 220px;
+        padding: 1.5rem;
+    }
+
+    .project-box .project-info {
+        padding: 3.5rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .project-info h4 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-info p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
 }
