@@ -496,6 +496,7 @@ span {
     cursor: pointer;
     transition: 0.4s ease-in-out;
     padding: 2rem;
+    overflow: hidden; /* Prevent content overflow */
 }
 
 .project-box:hover {
@@ -509,24 +510,26 @@ span {
     display: flex;
     flex-direction: column;
     text-align: left;
-    max-height: 200px;
-    justify-tracks: left;
+    height: 100%; /* Fill the container height */
+    justify-content: center; /* Center content vertically */
     align-items: baseline;
-    padding: 5rem 5rem;
+    padding: 2rem;
 }
 
 .project-info h4 {
     font-size: 3rem;
     font-weight: 800;
-    line-height: 2;
+    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
 .project-info p {
     font-size: 1.6rem;
     font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
-    margin: auto;
+    line-height: 1.5;
+    overflow-wrap: break-word; /* Handle long words */
+    word-wrap: break-word;
+    max-width: 100%; /* Ensure text doesn't overflow horizontally */
 }
 
 .contact {
