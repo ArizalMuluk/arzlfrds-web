@@ -238,27 +238,28 @@
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
+<!-- Mengganti bagian form yang lama dengan yang baru -->
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
 
-        <form id="whatsappForm" onsubmit="sendWhatsApp(event)">
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text" id="fullName" placeholder="Full Name" required>
-                    <input type="email" id="email" placeholder="Email" required>
-                </div>
-                <div class="input-box">
-                    <input type="number" id="phone" placeholder="Phone Number" required>
-                    <input type="text" id="subject" placeholder="Subject" required>
-                </div>
+    <form action="https://formspree.io/f/mqaebrgg" method="POST">
+        <div class="input-group">
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
             </div>
+            <div class="input-box">
+                <input type="number" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+        </div>
 
-            <div class="input-group2">
-                <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                <input type="submit" value="Send Message" class="btnz">
-            </div>
-        </form>
-    </section>
+        <div class="input-group2">
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btnz">Send Message</button>
+        </div>
+    </form>
+</section>
 
     <footer class="footer">
         <div class="social">
