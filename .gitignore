@@ -1,5 +1,6 @@
 # Ignore configuration file with sensitive data
 config.js
+configexs.js
 
 # Ignore node modules if you're using npm
 node_modules/

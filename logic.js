@@ -1,5 +1,3 @@
-import CONFIG from './config.js';
-
 document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.querySelector('#menu-icon');
     const navbar = document.querySelector('.navbar');
@@ -46,44 +44,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Typed.js animation
-    const typed = new Typed('.text-animation span', {
-        strings: ['AI Engineer', 'ML Engineer', 'Data Analyst', 'Software Developer'],
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 1000,
-        loop: true
-    });
+    // const typed = new Typed('.text-animation span', {
+    //     strings: ['AI Engineer', 'ML Engineer', 'Data Analyst', 'Software Developer'],
+    //     typeSpeed: 100,
+    //     backSpeed: 50,
+    //     backDelay: 1000,
+    //     loop: true
+    // });
 });
 
-function sendWhatsApp(event) {
-    event.preventDefault();
+// function sendWhatsApp(event) {
+//     event.preventDefault();
 
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+//     const fullName = document.getElementById('fullName').value;
+//     const email = document.getElementById('email').value;
+//     const phone = document.getElementById('phone').value;
+//     const subject = document.getElementById('subject').value;
+//     const message = document.getElementById('message').value;
 
-    const text = `*New Contact Form Submission*
-Name: ${fullName}
-Email: ${email}
-Phone: ${phone}
-Subject: ${subject}
+//     const text = `*New Contact Form Submission*
+// Name: ${fullName}
+// Email: ${email}
+// Phone: ${phone}
+// Subject: ${subject}
 
-Message:
-${message}`;
+// Message:
+// ${message}`;
 
-    const phoneNumber = CONFIG.whatsappNumber;
+//     const phoneNumber = CONFIG.whatsappNumber;
 
-    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(text)}`;
+//     const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(text)}`;
 
-    window.open(whatsappURL, '_blank');
+//     window.open(whatsappURL, '_blank');
 
-    document.getElementById('whatsappForm').reset();
-}
+//     document.getElementById('whatsappForm').reset();
+// }
 
-// Pastikan form ada sebelum menambahkan event listener
-const whatsappForm = document.getElementById('whatsappForm');
-if (whatsappForm) {
-    whatsappForm.addEventListener('submit', sendWhatsApp);
-}
+// // Pastikan form ada sebelum menambahkan event listener
+// const whatsappForm = document.getElementById('whatsappForm');
+// if (whatsappForm) {
+//     whatsappForm.addEventListener('submit', sendWhatsApp);
+// }
