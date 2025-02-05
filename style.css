@@ -74,8 +74,19 @@ body {
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
+#menu-icon.bx-x {
+    transform: rotate(180deg);
+    color: var(--main-color);
+    text-shadow: 0 0 10px var(--main-color);
+}
+
+.navbar {
+    transition: 0.3s ease;
+}
 section {
     min-height: 100vh;
     padding: 10rem 12% 10rem;
@@ -496,7 +507,7 @@ span {
     cursor: pointer;
     transition: 0.4s ease-in-out;
     padding: 2rem;
-    overflow: hidden; /* Prevent content overflow */
+    overflow: hidden; 
 }
 
 .project-box:hover {
@@ -510,8 +521,8 @@ span {
     display: flex;
     flex-direction: column;
     text-align: left;
-    height: 100%; /* Fill the container height */
-    justify-content: center; /* Center content vertically */
+    height: 100%;
+    justify-content: center; 
     align-items: baseline;
     padding: 2rem;
 }
@@ -527,9 +538,9 @@ span {
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.5;
-    overflow-wrap: break-word; /* Handle long words */
+    overflow-wrap: break-word; 
     word-wrap: break-word;
-    max-width: 100%; /* Ensure text doesn't overflow horizontally */
+    max-width: 100%;
 }
 
 .contact {
@@ -760,7 +771,7 @@ span {
     .navbar {
         position: absolute;
         top: 100%;
-        right: 0;
+        right: -100%; 
         width: 50%;
         padding: 1rem 3%;
         background: rgba(0, 0, 0, 0.8);
@@ -768,11 +779,15 @@ span {
         border-bottom-left-radius: 2rem;
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
-        display: none;
+        display: block; 
+        transform: translateX(50px); 
+        transition: 0.3s ease-in-out; 
     }
 
     .navbar.active {
-        display: block;
+        right: 0; 
+        opacity: 1;
+        transform: translateX(0); 
     }
 
     .navbar a {
@@ -780,7 +795,17 @@ span {
         font-size: 2rem;
         margin: 3rem 0;
         color: white;
+        transform: translateX(50px);
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+        transition-delay: calc(0.1s * var(--i));
     }
+
+    .navbar.active a {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
 
     .home {
         flex-direction: column-reverse;

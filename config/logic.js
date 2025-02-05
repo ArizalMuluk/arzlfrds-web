@@ -1,16 +1,30 @@
 import CONFIG from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    let menuIcon = document.querySelector('#menu-icon');
-    let navbar = document.querySelector('.navbar');
-    let sections = document.querySelectorAll('section');
-    let navLinks = document.querySelectorAll('header nav a');
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('.navbar');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('header nav a');
 
-    if (!menuIcon) {
-        console.error('Menu icon element not found!');
-        return;
+    // Menambahkan event listener untuk menu icon
+    if (menuIcon && navbar) {
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        });
+
+        // Menutup menu saat link di klik
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuIcon.classList.remove('bx-x');
+                navbar.classList.remove('active');
+            });
+        });
+    } else {
+        console.error('Menu icon or navbar element not found!');
     }
 
+    // Scroll sections
     window.onscroll = () => {
         sections.forEach(sec => {
             let top = window.scrollY;
@@ -21,17 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if(top >= offset && top < offset + height) {
                 navLinks.forEach(links => {
                     links.classList.remove('active');
-                    document.querySelector(`header nav a[href*='${id}']`).classList.add('active');
+                    document.querySelector(`header nav a[href*='${id}']`)?.classList.add('active');
                 });
             } 
         });
+
+        // Optional: Menutup menu saat scroll
+        menuIcon?.classList.remove('bx-x');
+        navbar?.classList.remove('active');
     }
 
-    menuIcon.onclick = () => {
-        menuIcon.classList.toggle('bx-x');
-        navbar.classList.toggle('active');
-    }
-
+    // Typed.js animation
     const typed = new Typed('.text-animation span', {
         strings: ['AI Engineer', 'ML Engineer', 'Data Analyst', 'Software Developer'],
         typeSpeed: 100,
@@ -68,4 +82,8 @@ ${message}`;
     document.getElementById('whatsappForm').reset();
 }
 
-document.getElementById('whatsappForm').addEventListener('submit', sendWhatsApp);
+// Pastikan form ada sebelum menambahkan event listener
+const whatsappForm = document.getElementById('whatsappForm');
+if (whatsappForm) {
+    whatsappForm.addEventListener('submit', sendWhatsApp);
+}
