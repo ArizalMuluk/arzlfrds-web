@@ -481,17 +481,17 @@ span {
     box-shadow: 0 0 10px var(--main-color);
 }
 
-.project {
+.service {
     background-color: var(--second-bg-color);
     color: black;
 }
 
-.project h2 {
+.service h2 {
     margin-bottom: 5rem;
     color: white;
 }
 
-.project-container {
+.service-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -499,7 +499,7 @@ span {
     padding: 0 2rem;
 }
 
-.project-box {
+.service-box {
     background-color: var(--main-color);
     height: 300px;
     border-radius: 3rem;
@@ -510,14 +510,14 @@ span {
     overflow: hidden; 
 }
 
-.project-box:hover {
+.service-box:hover {
     background: white;
     color: black;
     border: 5px solid var(--main-color);
     transform: scale(1.03);
 }
 
-.project-box .project-info {
+.service-box .service-info {
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -527,14 +527,14 @@ span {
     padding: 2rem;
 }
 
-.project-info h4 {
+.service-info h4 {
     font-size: 3rem;
     font-weight: 800;
     line-height: 1.5;
     margin-bottom: 1rem;
 }
 
-.project-info p {
+.service-info p {
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.5;
@@ -678,7 +678,7 @@ span {
         font-size: 55%;
     }
 
-.project-container {
+.service-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         margin: 0 2rem;
@@ -734,17 +734,17 @@ span {
         left: 0;
     }
 
-    .project {
+    .service {
         padding-bottom: 7rem;
     }
 
-    .project-container {
+    .service-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin: 0 1rem;
     }
     
-    .project-box {
+    .service-box {
         height: auto;
         min-height: 250px;
     }
@@ -830,34 +830,34 @@ span {
         width: 56vw;
     }
 
-    .project h2 {
+    .service h2 {
         margin-bottom: 3rem;
     }
 
-    .project-container {
+    .service-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         margin: 0 3rem;
     }
 
-    .project-box {
+    .service-box {
         height: auto;
         min-height: 220px;
         padding: 1.5rem;
     }
 
-    .project-box .project-info {
+    .service-box .service-info {
         padding: 3.5rem;
         text-align: center;
         align-items: center;
     }
 
-    .project-info h4 {
+    .service-info h4 {
         font-size: 2.8rem;
         margin-bottom: 1rem;
     }
 
-    .project-info p {
+    .service-info p {
         font-size: 1.5rem;
         line-height: 1.6;
     }
