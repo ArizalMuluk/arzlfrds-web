@@ -16,6 +16,100 @@
     --main-color: #00ffee;
 }
 
+.home-content {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideRight 1s ease forwards;
+}
+
+.home-img {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideLeft 1s ease forwards;
+}
+
+.education,
+.skills,
+.service {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.education.show,
+.skills.show,
+.service.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.contact.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-heading {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: slideDown 1s ease forwards 0.5s;
+}
+
+.animate-form {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s ease forwards 0.8s;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 html {
     font-size: 60%;
     overflow-x: hidden;
@@ -142,6 +236,18 @@ span {
 
 .home-img {
     border-radius: 100%;
+}
+
+.animate-content {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideRight 1s ease forwards;
+}
+
+.animate-image {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideLeft 1s ease forwards;
 }
 
 .home-img img {

@@ -41,47 +41,44 @@ document.addEventListener('DOMContentLoaded', () => {
         // Optional: Menutup menu saat scroll
         menuIcon?.classList.remove('bx-x');
         navbar?.classList.remove('active');
+
+        // Tambahkan handleScroll untuk animasi
+        handleScroll();
     }
 
-    // Typed.js animation
-    // const typed = new Typed('.text-animation span', {
-    //     strings: ['AI Engineer', 'ML Engineer', 'Data Analyst', 'Software Developer'],
-    //     typeSpeed: 100,
-    //     backSpeed: 50,
-    //     backDelay: 1000,
-    //     loop: true
-    // });
+    // Fungsi untuk mengecek apakah elemen visible dalam viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        return (
+            rect.top <= windowHeight * 0.75 && // Trigger animasi ketika elemen 75% terlihat
+            rect.bottom >= 0
+        );
+    }
+
+    // Fungsi untuk menambahkan class 'show' ketika elemen visible
+    function handleScroll() {
+        const sections = document.querySelectorAll('.education, .skills, .service, .contact');
+        
+        sections.forEach(section => {
+            if (isElementInViewport(section)) {
+                section.classList.add('show');
+            }
+        });
+    }
+
+    // Event listener untuk scroll dengan throttling
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+        }
+        scrollTimeout = window.requestAnimationFrame(() => {
+            handleScroll();
+        });
+    });
+
+    // Panggil handleScroll saat halaman dimuat
+    handleScroll();
 });
-
-// function sendWhatsApp(event) {
-//     event.preventDefault();
-
-//     const fullName = document.getElementById('fullName').value;
-//     const email = document.getElementById('email').value;
-//     const phone = document.getElementById('phone').value;
-//     const subject = document.getElementById('subject').value;
-//     const message = document.getElementById('message').value;
-
-//     const text = `*New Contact Form Submission*
-// Name: ${fullName}
-// Email: ${email}
-// Phone: ${phone}
-// Subject: ${subject}
-
-// Message:
-// ${message}`;
-
-//     const phoneNumber = CONFIG.whatsappNumber;
-
-//     const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(text)}`;
-
-//     window.open(whatsappURL, '_blank');
-
-//     document.getElementById('whatsappForm').reset();
-// }
-
-// // Pastikan form ada sebelum menambahkan event listener
-// const whatsappForm = document.getElementById('whatsappForm');
-// if (whatsappForm) {
-//     whatsappForm.addEventListener('submit', sendWhatsApp);
-// }
